@@ -20,7 +20,10 @@ function Product({options,type,Name}) {
     }
 
     function add(){
+        if(quantity != 0)
         setProducts({...products,[`${counter}`]:{name,price,total,quantity,type}});
+        else
+        alert("Not valid");
         setCounter(counter+1);
     }
 
@@ -66,7 +69,7 @@ function Product({options,type,Name}) {
                     {options.map((e,i)=><option key={i}>{e.name}</option>)}
                     </select>
                     <input type="number" placeholder="Quantity" name="quantity" onChange={calcState} value={quantity}/>
-                    <input type="number" placeholder="Price" name="price" value={price} readOnly/>
+                    <input type="number" placeholder="Price" min=1 name="price" value={price} readOnly/>
                     <input type="number" placeholder="Total Amount" name="total" value={total} readOnly />
                     <input type="button" defaultValue="+" onClick={add}/>
                 </div>
