@@ -1,12 +1,9 @@
-import { createStore } from 'redux';
 import './App.css';
 import Card from './Card';
 import Product from './Product';
-import { Provider } from 'react-redux';
 import data from './data.json';
 import { useEffect, useState } from 'react';
 function App() {
-  // const [state,setState] = useState({options:[],type:""});
   const [options,setOptions] = useState([]);
   const [ProductType,setProductType] = useState("");
   let v = localStorage.getItem("oct-task-1");
@@ -62,9 +59,14 @@ function App() {
         </>
         
       } */}
+      <div>
       {
-        selectingProduct()
-      }
+        ProductType=="Realme"?
+        <Product options={options} type={ProductType} Name = "Realme C2" />
+        :ProductType=="Samsung"?<Product options={options} type={ProductType} Name = "Galaxy" />
+        :ProductType=="Intex"?<Product options={options} type={ProductType} Name = "Intex Cloud 4G" />:""
+        
+      }</div>
       </div>
     </>
   );
