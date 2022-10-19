@@ -14,7 +14,7 @@ function Product({options,type,Name}) {
     function calcState(e){
         // console.log(e.target.name,e.target.value);
         switch(e.target.name){
-            case "quantity":setQuantity(parseInt(e.target.value));break;
+            case "quantity":setQuantity(Math.abs(parseInt(e.target.value)));break;
             case "productName":setName(e.target.value);break;
         }
     }
