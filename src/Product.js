@@ -79,10 +79,10 @@ function Product({options,type,Name}) {
                 <legend>Products</legend>
                 <div>
                     {Object.entries(products).map((e)=><div key={e[0]} className='productsContainer'>
-                        <input type="text" defaultValue={e[1].name} />
-                        <input type="text" defaultValue={e[1].quantity}/>
-                        <input type="text" defaultValue={e[1].price}/>
-                        <input type="text" defaultValue={e[1].total}/>
+                        <input type="text" defaultValue={e[1].name} readOnly/>
+                        <input type="text" defaultValue={e[1].quantity} readOnly />
+                        <input type="text" defaultValue={e[1].price} readOnly />
+                        <input type="text" defaultValue={e[1].total} readOnly />
                         <input type="button" value="-" onClick={()=>deleteThis(e[0])}/>
                     </div>)}
                 </div>
