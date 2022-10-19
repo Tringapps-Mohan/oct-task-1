@@ -15,3 +15,8 @@ input[type=text],input[type=number], select {
 input[type=submit],input[type=reset],input[type=button]{
     padding: 5px;
 }
+
+.productsContainer{
+    display:flex;
+    justify-content:space-between;
+}
