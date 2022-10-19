@@ -3,7 +3,7 @@ import './Card.css';
 function Card(props){
     return (
         <div className="container">
-            {Object.entries(props).map(e=><div><span className="titles">{e[0].toUpperCase()}</span>:<span className="values">{e[1]}</span></div>)}
+            {Object.entries(props).map(e=><div><div className="titles">{e[0].toUpperCase()}</div>:<div className="values">{e[1]}</div></div>)}
         </div>
     )
 }
