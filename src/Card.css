@@ -8,3 +8,7 @@
 .card{
     width: 100%;
 }
+
+.container div{
+    font-weight:bolder;
+}
