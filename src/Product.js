@@ -63,7 +63,7 @@ function Product({options,type,Name}) {
                 <legend>Form</legend>
                 <div className="productSelect">
                     <select onChange={calcState} name="productName" >
-                    {options.map(e=><option>{e.name}</option>)}
+                    {options.map((e,i)=><option key={i}>{e.name}</option>)}
                     </select>
                     <input type="number" placeholder="Quantity" name="quantity" onChange={calcState} value={quantity}/>
                     <input type="number" placeholder="Price" name="price" value={price} readOnly/>
@@ -78,7 +78,7 @@ function Product({options,type,Name}) {
             <fieldset>
                 <legend>Products</legend>
                 <div>
-                    {Object.entries(products).map((e)=><div key={e[0]}>
+                    {Object.entries(products).map((e)=><div key={e[0]} className='productsContainer'>
                         <input type="text" defaultValue={e[1].name} />
                         <input type="text" defaultValue={e[1].quantity}/>
                         <input type="text" defaultValue={e[1].price}/>
