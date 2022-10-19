@@ -20,11 +20,11 @@ function Product({options,type,Name}) {
     }
 
     function add(){
-        if(quantity)
+        if(quantity){
         setProducts({...products,[`${counter}`]:{name,price,total,quantity,type}});
-        else
-        alert("Not valid");
         setCounter(counter+1);
+        }else
+        alert("Not valid");
     }
 
     function storeProducts(e){
