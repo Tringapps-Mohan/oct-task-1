@@ -1,8 +1,7 @@
 import React from "react";
 import { useState,useEffect } from "react";
 import data from './data.json';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import './product.css';
 function Product({options,type,Name}) {
     const [flag,setFlag] = useState(true);
     const [quantity,setQuantity] = useState(0);
@@ -34,7 +33,6 @@ function Product({options,type,Name}) {
 
         localStorage.setItem("oct-task-1",JSON.stringify([...JSON.parse(storedProducts),...Object.values(products)]));
         setProducts({});
-        toast("Products Added!");
     }
 
     function deleteThis(key){
@@ -63,7 +61,7 @@ function Product({options,type,Name}) {
         <form onSubmit={storeProducts}>
             <fieldset>
                 <legend>Form</legend>
-                <div>
+                <div className="productSelect">
                     <select onChange={calcState} name="productName" >
                     {options.map(e=><option>{e.name}</option>)}
                     </select>
@@ -81,15 +79,14 @@ function Product({options,type,Name}) {
                 <legend>Products</legend>
                 <div>
                     {Object.entries(products).map((e)=><div key={e[0]}>
-                        <input defaultValue={e[1].name} />
-                        <input defaultValue={e[1].quantity}/>
-                        <input defaultValue={e[1].price}/>
-                        <input defaultValue={e[1].total}/>
+                        <input type="text" defaultValue={e[1].name} />
+                        <input type="text" defaultValue={e[1].quantity}/>
+                        <input type="text" defaultValue={e[1].price}/>
+                        <input type="text" defaultValue={e[1].total}/>
                         <input type="button" value="-" onClick={()=>deleteThis(e[0])}/>
                     </div>)}
                 </div>
             </fieldset>
-            <ToastContainer/>
         </form>
     )
 }
