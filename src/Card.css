@@ -15,4 +15,9 @@
 
 .titles{
       background-color:#c9b1df;
+      padding:5px;
+}
+
+.values{
+    padding:5px;
 }
