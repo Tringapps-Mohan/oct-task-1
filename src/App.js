@@ -1,7 +1,7 @@
 import './App.css';
 import Card from './Card';
 import Product from './Product';
-import data from './data.json';
+import data from './data.json'; 
 import { useEffect, useState } from 'react';
 function App() {
   const [options,setOptions] = useState([]);
