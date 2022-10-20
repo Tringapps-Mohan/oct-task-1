@@ -1,7 +1,7 @@
 import './App.css';
 import Card from './Card';
 import Product from './Product';
-import data from './data.json'; 
+import data from './data.json';
 import { useEffect, useState } from 'react';
 function App() {
   const [options,setOptions] = useState([]);
@@ -11,17 +11,6 @@ function App() {
   function showCart(type){
     setOptions(data.Phones.find(e=>e.type == type).options);
     setProductType(type);
-  }
-
-  function selectingProduct(){
-      if(ProductType=="Realme")
-      return <Product options={options} type={ProductType} Name = "Realme C2" />
-      else if(ProductType=="Samsung")
-      return <Product options={options} type={ProductType} Name = "Galaxy" />
-      else if(ProductType=="Intex")
-      return <Product options={options} type={ProductType} Name = "Intex Cloud 4G" />
-      else
-      return ""
   }
 
   useEffect(()=>{
@@ -46,27 +35,19 @@ function App() {
         </div>
       </div>
       <div>
-      {/* {
-        ProductType=="Realme"?
-        <Product options={options} type={ProductType} Name = "Realme C2" />
-        :<>
-        {
-          ProductType=="Samsung"?<Product options={options} type={ProductType} Name = "Galaxy" />
-          :<>{
-            ProductType=="Intex"?<Product options={options} type={ProductType} Name = "Intex Cloud 4G" />:null
-          }</>
-        }
-        </>
-        
-      } */}
       <div>
       {
         ProductType=="Realme"?
         <Product options={options} type={ProductType} Name = "Realme C2" />
-        :ProductType=="Samsung"?<Product options={options} type={ProductType} Name = "Galaxy" />
-        :ProductType=="Intex"?<Product options={options} type={ProductType} Name = "Intex Cloud 4G" />:""
-        
-      }</div>
+        :""
+      }
+      {
+        ProductType=="Samsung"?<Product options={options} type={ProductType} Name = "Galaxy" />:""
+      }
+      {
+        ProductType=="Intex"?<Product options={options} type={ProductType} Name = "Intex Cloud 4G" />:""
+      }
+      </div>
       </div>
     </>
   );
